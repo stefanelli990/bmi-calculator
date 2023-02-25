@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: hsl(239, 100%, 73%);
+    --primary-color-lighter: hsl(239, 100%, 76%);
+    --secondary-color: #F6FAFF;
+    --light-gray-color: #d8d8d8;
+    --gray: #aaaaaa;
+    --white: #fff;
+    --off-white: #FBFBFB;
+    --yellow-color: #f3c709;
+    --green-color: #00df00;
+    --orange-color: #FD9D66;
+    --red-color: #ff0000;
+    --radius: .5rem;
+    --transition: .1s;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--off-white);
+    font-size: 14px;
+    margin: 1rem;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    outline: none;
+}
+h1, h2, h3, h4 {
+    line-height: 130%;
+}
+h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h1 span {
+    color: var(--primary-color);
+}
+p span {
+    font-weight: 600;
+}
+label {
+    font-size: .75rem;
+}
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    border-radius: .5rem;
+    padding: 40px 32px;
+    background-color: var(--white);
+    box-shadow: 0px 1px 10px rgba(219, 219, 219, 0.25);
+}
+.inputs-wrapper--us-units {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1rem;
+}
+.inputs-wrapper--us-units .floating-input:last-of-type {
+    grid-column: 1 / 3;
+}
+
+.units-wrapper span {
+    font-weight: 500;
+}
+.floating-input {
+    position: relative;
+    min-height: 60px;
+    margin-bottom: 1.5rem;
+}
+.floating-input .floating-input__label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: text;
+    transition: var(--transition);
+    pointer-events: none;
+}
+.floating-input__field {
+    min-height: 60px;
+    padding: 26px 12px 0px 12px;
+    border: 1px solid gainsboro;
+    border-radius: var(--radius);
+    width: 100%;
+    outline: none;
+    transition: var(--transition);
+}
+
+.floating-input__field:focus {
+    border: 1px solid var(--primary-color);
+}
+.floating-input__field:focus + .floating-input__label,
+.floating-input__field:not(:placeholder-shown) + .floating-input__label {
+    top: 1rem;
+    color: var(--primary-color)
+}
+.floating-input__field:not(:focus) + .floating-input__label {
+    color: var(--gray);
+}
+#resultBMI {
+    text-align: center;
+}
+#resultBMI p:first-of-type {
+    margin-bottom: 1rem;
+}
+.bmiNumber {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 32px 0 16px;
+}
+
+/* buttons */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: var(--radius);
+    font-size: inherit;
+}
+.btn--units {
+    margin-bottom: 24px;
+    
+}
+.btn--units span {
+    font-weight: 600;
+}
+.btn--calculate {
+    background-color: var(--primary-color);
+    color: white;
+    min-height: 60px;
+    font-weight: 600;
+    gap: .5rem;
+    transition: var(--transition);
+}
+.btn--calculate:hover {
+    background-color: var(--primary-color-lighter);
+}
+
+/* active class */
+.d-none {
+    display: none;
+}

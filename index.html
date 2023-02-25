@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1><span>B</span>ody <span>M</span>ass <span>I</span>ndex<br>Calculator</h1>
+    <div class="app-wrapper">
+        <div>
+            <button id="btnUnits" class="btn btn--units">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6078 3.63514V7.01014C16.6078 7.23392 16.5189 7.44853 16.3607 7.60676C16.2025 7.765 15.9878 7.85389 15.7641 7.85389H12.3891C12.1653 7.85389 11.9507 7.765 11.7924 7.60676C11.6342 7.44853 11.5453 7.23392 11.5453 7.01014C11.5453 6.78637 11.6342 6.57176 11.7924 6.41352C11.9507 6.25529 12.1653 6.16639 12.3891 6.16639H13.725L12.7758 5.22421C12.2801 4.728 11.6916 4.33436 11.0437 4.06578C10.3958 3.7972 9.70134 3.65896 9 3.65896C8.29866 3.65896 7.6042 3.7972 6.95632 4.06578C6.30844 4.33436 5.71986 4.728 5.22422 5.22421C5.06413 5.3797 4.84974 5.46667 4.62656 5.46667C4.40339 5.46667 4.189 5.3797 4.02891 5.22421C3.95025 5.14582 3.88784 5.05267 3.84525 4.95012C3.80266 4.84756 3.78074 4.7376 3.78074 4.62655C3.78074 4.5155 3.80266 4.40554 3.84525 4.30298C3.88784 4.20042 3.95025 4.10728 4.02891 4.02889C5.34837 2.71246 7.13614 1.97314 9 1.97314C10.8639 1.97314 12.6516 2.71246 13.9711 4.02889L14.9203 4.97108V3.63514C14.9203 3.41137 15.0092 3.19676 15.1674 3.03852C15.3257 2.88029 15.5403 2.79139 15.7641 2.79139C15.9878 2.79139 16.2025 2.88029 16.3607 3.03852C16.5189 3.19676 16.6078 3.41137 16.6078 3.63514ZM12.7758 12.7758C12.2801 13.272 11.6916 13.6656 11.0437 13.9342C10.3958 14.2028 9.70134 14.341 9 14.341C8.29866 14.341 7.6042 14.2028 6.95632 13.9342C6.30844 13.6656 5.71986 13.272 5.22422 12.7758L4.275 11.8336H5.61094C5.83472 11.8336 6.04933 11.7447 6.20756 11.5865C6.36579 11.4282 6.45469 11.2136 6.45469 10.9898C6.45469 10.7661 6.36579 10.5514 6.20756 10.3932C6.04933 10.235 5.83472 10.1461 5.61094 10.1461H2.23594C2.01216 10.1461 1.79755 10.235 1.63932 10.3932C1.48108 10.5514 1.39219 10.7661 1.39219 10.9898V14.3648C1.39219 14.5886 1.48108 14.8032 1.63932 14.9615C1.79755 15.1197 2.01216 15.2086 2.23594 15.2086C2.45972 15.2086 2.67433 15.1197 2.83256 14.9615C2.99079 14.8032 3.07969 14.5886 3.07969 14.3648V13.0289L4.02891 13.9711C4.68132 14.6246 5.4562 15.1431 6.30919 15.4968C7.16219 15.8506 8.07656 16.0327 9 16.0327C9.92344 16.0327 10.8378 15.8506 11.6908 15.4968C12.5438 15.1431 13.3187 14.6246 13.9711 13.9711C14.0498 13.8927 14.1122 13.7995 14.1548 13.697C14.1973 13.5944 14.2193 13.4845 14.2193 13.3734C14.2193 13.2624 14.1973 13.1524 14.1548 13.0499C14.1122 12.9473 14.0498 12.8542 13.9711 12.7758C13.811 12.6203 13.5966 12.5333 13.3734 12.5333C13.1503 12.5333 12.9359 12.6203 12.7758 12.7758Z" fill="#7678FF"/>
+                </svg>
+                <span>US units</span>
+            </button>
+        </div>
+            
+        <div class="inputs-wrapper">
+            <div class="inputs-wrapper--metric-units">
+                <div class="floating-input">
+                    <input class="floating-input__field" type="number" id="heightInput" placeholder=" ">
+                    <label class="floating-input__label" for="heightInput">Height(cm)</label>
+                </div>
+                <div class="floating-input">
+                    <input class="floating-input__field"  type="number" id="weightInput" placeholder=" ">
+                    <label class="floating-input__label" for="weightInput">Weight(kg)</label>
+                </div>
+            </div>
+            <div class="inputs-wrapper--us-units d-none">
+                <div class="floating-input">
+                    <input class="floating-input__field" type="number" id="feetInput" placeholder=" ">
+                    <label class="floating-input__label" for="feetInput">Feet</label>
+                </div>
+                <div class="floating-input">
+                    <input class="floating-input__field" type="number" id="inchesInput" placeholder=" ">
+                    <label class="floating-input__label" for="inchesInput">Inches</label>
+                </div>
+                <div class="floating-input">
+                    <input class="floating-input__field"  type="number" id="poundsInput" placeholder=" ">
+                    <label class="floating-input__label" for="poundsInput">Pounds</label>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn--calculate" id="calculateBtn" onClick="calculateBMI()"><span>Calculate BMI</span> <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.8 17.275C13.6 17.075 13.504 16.8334 13.512 16.55C13.52 16.2667 13.6243 16.025 13.825 15.825L16.65 13H5.5C5.21667 13 4.979 12.904 4.787 12.712C4.595 12.52 4.49934 12.2827 4.5 12C4.5 11.7167 4.596 11.479 4.788 11.287C4.98 11.095 5.21734 10.9994 5.5 11H16.65L13.8 8.15005C13.6 7.95005 13.5 7.71238 13.5 7.43705C13.5 7.16172 13.6 6.92438 13.8 6.72505C14 6.52505 14.2377 6.42505 14.513 6.42505C14.7883 6.42505 15.0257 6.52505 15.225 6.72505L19.8 11.3C19.9 11.4 19.971 11.5084 20.013 11.625C20.055 11.7417 20.0757 11.8667 20.075 12C20.075 12.1334 20.054 12.2584 20.012 12.375C19.97 12.4917 19.8993 12.6 19.8 12.7L15.2 17.3C15.0167 17.4834 14.7877 17.575 14.513 17.575C14.2383 17.575 14.0007 17.475 13.8 17.275Z" fill="white"/>
+            </svg>
+            </button>
+        <div id="resultBMI">
+            <!-- <h2 class="bmiNumber">25</h2>
+            <p><b>18.5</b> to <b>24.9</b> is considered <span>healthy</span> weight.</p>
+            <p>Advice: By maintaining a healthy weight, you lower your risk of developing serious health problems.</p> -->
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
