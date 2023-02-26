@@ -8,6 +8,8 @@ const poundsInput = document.getElementById('poundsInput');
 const resultBMI = document.getElementById('resultBMI');
 const btnUnits = document.getElementById('btnUnits');
 
+const inputs = document.querySelectorAll('input');
+
 
 // calculate bmi in US
 function calculateImperialBMI() {
@@ -34,7 +36,6 @@ function calculateMetricBMI() {
 
     console.log(metricUnits.toFixed(1));
     generateResults(metricUnits.toFixed(1));
-
 }
 
 // preform calculation based on switched units
@@ -44,10 +45,19 @@ function calculateBMI() {
     } else if(btnUnits.children[1].textContent === 'Metric units' && feetInput.value && inchesInput.value && poundsInput.value) {
         calculateImperialBMI();
     } else {
-        alert('Please fill the inputs');
+        alert('Please fill remaining inputs.');
         resultBMI.innerText = '';
     }
 }
+
+// prevent from typing letters
+inputs.forEach(input => {
+    input.addEventListener('input', () => {
+            if (isNaN(Number(input.value))) {
+        input.value = '';
+      }
+    })
+})
 
 // generate result of bmi with messages
 function generateResults(bmi) {
