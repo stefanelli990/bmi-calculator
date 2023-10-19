@@ -1,14 +1,14 @@
 <template>
     <AppToggle @toggle="toggleForm" :label="formMetricIsVisible ? 'US Units' : 'Metric Units'"/>
     <div class="space-y-4" v-if="formMetricIsVisible">
-        <AppInputs :value="height" @input="updateField($event, 'height')" caption="Height" id="height" for="height" name="height" placeholder="Height"/>
-        <AppInputs :value="weight" @input="updateField($event, 'weight')" caption="Weight" id="weight" for="weight" name="weight" placeholder="Weight"/>
+        <AppInputs :value="height" @input="updateField($event, 'height')" caption="Height(cm)" id="height" for="height" name="height" placeholder="Height" numberLength="3"/>
+        <AppInputs :value="weight" @input="updateField($event, 'weight')" caption="Weight(kg)" id="weight" for="weight" name="weight" placeholder="Weight" numberLength="3"/>
         <AppBtn size="w-full" @click="calculateBmi"><span>Calculate BMI</span><Icon icon="fa6-solid:arrow-right" /></AppBtn>
     </div>
     <div class="grid grid-cols-2 gap-4" v-else-if="!formMetricIsVisible">
-        <AppInputs :value="feet" @input="updateField($event, 'feet')" caption="Feet" id="feet" for="feet" name="feet" placeholder="Feet"/>
-        <AppInputs :value="inches" @input="updateField($event, 'inches')" caption="Inches" id="inches" for="inches" name="inches" placeholder="Inches"/>
-        <AppInputs :value="pounds" @input="updateField($event, 'pounds')" caption="Pounds" id="pounds" for="pounds" name="pounds" placeholder="Pounds" class="col-span-2"/>
+        <AppInputs :value="feet" @input="updateField($event, 'feet')" caption="Feet" id="feet" for="feet" name="feet" placeholder="Feet" numberLength="1"/>
+        <AppInputs :value="inches" @input="updateField($event, 'inches')" caption="Inches" id="inches" for="inches" name="inches" placeholder="Inches" numberLength="2"/>
+        <AppInputs :value="pounds" @input="updateField($event, 'pounds')" caption="Pounds" id="pounds" for="pounds" name="pounds" placeholder="Pounds" class="col-span-2" numberLength="3"/>
         <AppBtn @click="calculateBmi" class="col-span-2"><span>Calculate BMI</span><Icon icon="fa6-solid:arrow-right" /></AppBtn>
     </div>
 </template>
@@ -20,7 +20,7 @@ import AppInputs from './AppInputs.vue';
 import { Icon } from '@iconify/vue';
 import AppToggle from './AppToggle.vue';
 
-const emits = defineEmits(['submit-metric'])
+const emits = defineEmits(['submit-bmi'])
 
 const height = ref('')
 const weight = ref('')
@@ -56,7 +56,7 @@ const calculateBmi = () => {
     if (!isNaN(heightValue) && !isNaN(weightValue)) {
       const heightCm = heightValue / 100;
       const metric = weightValue / (heightCm * heightCm);
-      emits('submitBmi', metric.toFixed(1));
+      emits('submit-bmi', metric.toFixed(1));
     } else {
       alert('Please fill in metric inputs with valid numbers.');
     }
@@ -68,7 +68,7 @@ const calculateBmi = () => {
     if (!isNaN(feetValue) && !isNaN(inchesValue) && !isNaN(poundsValue)) {
       const usHeight = feetValue * 12 + inchesValue;
       const imperialUnits = (poundsValue / (usHeight * usHeight)) * 703;
-      emits('submitBmi', imperialUnits.toFixed(1));
+      emits('submit-bmi', imperialUnits.toFixed(1));
     } else {
       alert('Please fill in US units inputs with valid numbers.');
     }

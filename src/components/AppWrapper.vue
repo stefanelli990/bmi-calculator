@@ -1,17 +1,19 @@
 <template>
-    <div class="bg-white rounded-2xl shadow-md shadow-black/5  mx-auto max-w-md px-8 pt-10 pb-14 mt-20">
+    <div class="bg-white rounded-2xl shadow-md shadow-black/5  mx-auto max-w-md px-4 w-full pt-10 pb-14 md:px-8">
         <AppHeader/>
         <AppForm @submit-bmi="submitBmi"/>
-        <AppModal v-show="modalIsVisible" @close-modal="closeModal" :bmi-result="bmiResult" :advice-text="adviceText"/>
+      
+            <AppModal :is-visible="modalIsVisible" @close-modal="closeModal" :bmi="bmiResult" :advice="adviceText"/>
+     
     </div>
 </template>
 
 <script setup>
 
-import { computed, ref } from 'vue';
-import AppForm from './AppForm.vue';
-import AppHeader from './AppHeader.vue';
-import AppModal from './AppModal.vue';
+import { computed, ref } from 'vue'
+import AppForm from './AppForm.vue'
+import AppHeader from '../components/AppHeader.vue'
+import AppModal from './AppModal.vue'
 
 const modalIsVisible = ref(false)
 const bmiResult = ref(null)
@@ -51,3 +53,9 @@ const adviceText = computed(() => {
 })
 
 </script>
+
+<style>
+
+
+
+</style>
