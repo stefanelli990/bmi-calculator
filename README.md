@@ -8,10 +8,10 @@ BMI calculator allows the user to choose their preferred unit system (metric or 
 
 ## Features:
 
-- **Unit System Selection**: The app allows users to choose between the metric and imperial unit systems. This ensures that users can input their weight and height in the units they are most comfortable with.
+- **Unit System Selection**: The app allows users to choose between the metric and imperial unit systems.
 - **BMI Calculation**: The app performs the BMI calculation using the provided weight and height values.
-- **BMI Category Display**: The app provides a quick summary of the user's BMI category. This category is typically classified into ranges such as underweight, normal weight, overweight, and obese.
-- **Health Risks Information**: The app offers information about the health risks associated with the calculated BMI category. For instance, it may provide brief explanations or links to more detailed information on the potential health implications of being underweight, normal weight, overweight, or obese.
+- **BMI Category Display**: The app provides a quick summary of the user's BMI category. 
+- **Health Risks Information**: The app offers information about the health risks associated with the calculated BMI category.
 - **User-Friendly Interface**: An intuitive design ensures a seamless user experience.
 
 ## Technologies Used:
